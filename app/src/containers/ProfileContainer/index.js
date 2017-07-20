@@ -72,7 +72,7 @@ class ProfileContainer extends Component {
                       <AnnotatedMeter max={viewer.repositories.totalCount}
                                       series={_.map(primaryLanguageCountBy, (count, key) => {
                                           return {label: key, value: count, colorIndex:_.sample(["neutral-2", "neutral-3", "neutral-1", "neutral-4"])}
-                                      })} type="circle" legend={true} units="repo(s)" size="medium"/>
+                                      })} type="circle" legend={true} units="repo(s)" size="small"/>
                     </Box>
                     <Divider/>
                   </Box>

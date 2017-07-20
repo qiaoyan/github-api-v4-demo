@@ -5,7 +5,7 @@ import ApolloClient, {
 
 const baseUrl = process.env.API_URL || 'https://api.github.com/';
 const url = `${baseUrl}graphql`;
-const TOKEN = '092a02df19c1aa48df88bdb5ed1281af3e81fa64';
+const TOKEN = 'replace with your own token';
 
 const networkInterface = createNetworkInterface({
     uri: url, // Server URL (must be absolute)
@@ -14,6 +14,10 @@ const networkInterface = createNetworkInterface({
     },
 }).use([{
     applyMiddleware(req, next) {
+
+        if (TOKEN === 'replace with your own token') {
+            window.alert('please replace with your own token in apolloClient.js, when github personal access token is in a public github repo, it expires immediately. refer to: https://developer.github.com/v4/guides/forming-calls/#authenticating-with-graphql')
+        }
         if (req.request.operationName === '') {
             req.request.operationName = null;
         }
