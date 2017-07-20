@@ -120,6 +120,7 @@
     "functional-components": "0.0.5",
     "graphql-tag": "^1.1.2",
     "grommet": "v1.2.1",
+    "grommet-addons": "^0.4.0",
     "history": "^4.5.1",
     "immutable": "^3.7.5",
     "isomorphic-fetch": "^2.2.0",
@@ -153,7 +154,8 @@
     "serialize-javascript": "^1.3.0",
     "sinon": "2.0.0-pre",
     "styled-components": "latest",
-    "svg-react-loader": "^0.3.6"
+    "svg-react-loader": "^0.3.6",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "autoprefixer": "^6.5.1",
