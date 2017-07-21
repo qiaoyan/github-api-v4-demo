@@ -155,7 +155,8 @@
     "sinon": "2.0.0-pre",
     "styled-components": "latest",
     "svg-react-loader": "^0.3.6",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "underscore.string": "^3.3.4"
   },
   "devDependencies": {
     "autoprefixer": "^6.5.1",

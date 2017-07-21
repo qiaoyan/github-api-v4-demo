@@ -1,4 +1,5 @@
 /* GENERATOR: Assemble all pages for export */
+export RepositoryDetailPage from './RepositoryDetailPage';
 export StarsPage from './StarsPage';
 export ProfilePage from './ProfilePage';
 export AboutPage from './AboutPage/index';

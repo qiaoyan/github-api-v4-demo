@@ -33,7 +33,6 @@ const networkInterface = createNetworkInterface({
 }]);
 
 
-
 const client = new ApolloClient({
     networkInterface,
     initialState: typeof window !== 'undefined' ? window.__APOLLO_STATE__ : null, // eslint-disable-line

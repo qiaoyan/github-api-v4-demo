@@ -1,4 +1,5 @@
 /* GENERATOR: Assemble all components for export */
+export RepositoryCard from './RepositoryCard';
 export About from './About';
 export Contributor from './Contributor';
 export Avatar from './Avatar';

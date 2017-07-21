@@ -1,6 +1,6 @@
-import React, { Component, PropTypes } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import React, {Component, PropTypes} from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 import cssModules from 'react-css-modules';
 import Box from 'grommet/components/Box';
 import Section from 'grommet/components/Section';
@@ -10,8 +10,8 @@ import Footer from 'grommet/components/Footer';
 import Button from 'grommet/components/Button';
 import Heading from 'grommet/components/Heading';
 import Columns from 'grommet/components/Columns';
-import { Maybe } from 'functional-components';
-import { reduxForm } from 'redux-form';
+import {Maybe} from 'functional-components';
+import {reduxForm} from 'redux-form';
 import {
     LoadingIndicator,
     Divider,
@@ -30,6 +30,7 @@ class LandingContainer extends Component {
         super();
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
     handleSubmit() {
         const {
             actions,
@@ -39,6 +40,7 @@ class LandingContainer extends Component {
         actions.closeModal();
         actions.fakeSubmission(name);
     }
+
     render() {
         const {
             isLoading,
@@ -52,100 +54,99 @@ class LandingContainer extends Component {
         } = this.props;
         return (
             <Box className={styles.container} colorIndex="light-2">
-              <WelcomeModal
-                  onSubmit={this.handleSubmit}
-                  nameInput={nameInput}
-                  onClose={actions.closeModal}
-                  isVisible={isShowingModal}
-              />
-              <Maybe predicate={isLoading}>
-                <Section
-                    align="center"
-                    justify="center"
-                    className="full-height"
-                >
-                  <LoadingIndicator isLoading />
-                </Section>
-              </Maybe>
-              <Maybe predicate={!isLoading}>
-                <Box full="horizontal">
-                  <Hero
-                      justify="center"
-                      align="center"
-                      colorIndex="grey-1"
-                      backgroundImage="https://unsplash.it/600/300?image=852"
-                  >
-                    {/*<Box align="center" justify="center" style={{ width: '100%' }} colorIndex="grey-1-a">*/}
-                      {/*<img*/}
-                          {/*alt="udacity alumni"*/}
-                          {/*className="img-responsive"*/}
-                          {/*style={{ width: '300px' }}*/}
-                          {/*src="https://github.com/RyanCCollins/cdn/blob/master/alumni-webapp/udacity-alumni-png.png?raw=true"*/}
-                      {/*/>*/}
-                      {/*<Headline align="center" size="small">*/}
-                        {/*Scaling the Front End Feature First!*/}
-                      {/*</Headline>*/}
-                    {/*</Box>*/}
-                  </Hero>
-                  <Section align="center" justify="center">
-                      {/*{name ?*/}
-                          {/*<Headline align="center">*/}
-                              {/*{name && `Welcome ${name}!`}*/}
-                          {/*</Headline>*/}
-                          {/*:*/}
-                          {/*<Button*/}
-                              {/*label="Click me for a greeting"*/}
-                              {/*onClick={actions.openModal}*/}
-                          {/*/>*/}
-                      {/*}*/}
-                    <Box align="center" justify="center" pad="medium">
-                      <Button label="My Profile" href="/profile" />
-                    </Box>
-                    <Box align="center" justify="center" pad="medium">
-                      <Button label="My Stars" href="/stars" />
-                    </Box>
-
-                    <Divider />
-                    <Heading align="center" tag="h2">
-                      Thanks so much for using this boilerplate!
-                    </Heading>
-                    <Heading align="center" tag="h2">
-                      We worked super hard to make this a useful starter project
-                    </Heading>
-                    <Footer pad="large" align="center" justify="center" direction="column">
-                      <Heading align="center" tag="h2">
-                        Ready to get started?
-                      </Heading>
-                      <Box align="center" justify="center" pad="medium">
-                        <Button label="Go to About Page" href="/about" />
-                      </Box>
-                    </Footer>
-                  </Section>
-                  <Section align="center" justify="center">
-                    <Headline align="center">
-                        {'Who\'s Behind all This?'}
-                    </Headline>
-                    <Divider />
-                    <Columns
-                        maxCount={2}
+                <WelcomeModal
+                    onSubmit={this.handleSubmit}
+                    nameInput={nameInput}
+                    onClose={actions.closeModal}
+                    isVisible={isShowingModal}
+                />
+                <Maybe predicate={isLoading}>
+                    <Section
+                        align="center"
                         justify="center"
-                        masonry
+                        className="full-height"
                     >
-                        {contributors.map(person =>
-                            <Contributor key={person.name} person={person} />,
-                        )}
-                    </Columns>
-                  </Section>
-                  <Footer pad="large" align="center" justify="center" direction="column">
-                    <Heading align="center" tag="h2">
-                      Have any questions??
-                    </Heading>
-                    <Box align="center" justify="center" pad="medium">
-                      <Button label="Get in Touch" href="mailto:admin@ryancollins.io" />
+                        <LoadingIndicator isLoading/>
+                    </Section>
+                </Maybe>
+                <Maybe predicate={!isLoading}>
+                    <Box full="horizontal">
+                        <Hero
+                            justify="center"
+                            align="center"
+                            colorIndex="grey-1"
+                            backgroundImage="https://unsplash.it/600?image=852"
+                        >
+                            {/*<Box align="center" justify="center" style={{ width: '100%' }} colorIndex="grey-1-a">*/}
+                            {/*<img*/}
+                            {/*alt="udacity alumni"*/}
+                            {/*className="img-responsive"*/}
+                            {/*style={{ width: '300px' }}*/}
+                            {/*src="https://github.com/RyanCCollins/cdn/blob/master/alumni-webapp/udacity-alumni-png.png?raw=true"*/}
+                            {/*/>*/}
+                            {/*<Headline align="center" size="small">*/}
+                            {/*Scaling the Front End Feature First!*/}
+                            {/*</Headline>*/}
+                            {/*</Box>*/}
+                        </Hero>
+                        <Section align="center" justify="center">
+                            {/*{name ?*/}
+                            {/*<Headline align="center">*/}
+                            {/*{name && `Welcome ${name}!`}*/}
+                            {/*</Headline>*/}
+                            {/*:*/}
+                            {/*<Button*/}
+                            {/*label="Click me for a greeting"*/}
+                            {/*onClick={actions.openModal}*/}
+                            {/*/>*/}
+                            {/*}*/}
+                            <Box align="center" justify="center" pad="medium">
+                                <Button label="My Profile" href="/profile" fill={true} primary/>
+                                <Box pad="small"/>
+                                <Button label="My Stars" href="/stars" fill={true} primary/>
+                            </Box>
+
+                            <Divider/>
+                            <Heading align="center" tag="h2">
+                                Thanks so much for using this boilerplate!
+                            </Heading>
+                            <Heading align="center" tag="h2">
+                                We worked super hard to make this a useful starter project
+                            </Heading>
+                            <Footer pad="large" align="center" justify="center" direction="column">
+                                <Heading align="center" tag="h2">
+                                    Ready to get started?
+                                </Heading>
+                                <Box align="center" justify="center" pad="medium">
+                                    <Button label="Go to About Page" href="/about"/>
+                                </Box>
+                            </Footer>
+                        </Section>
+                        <Section align="center" justify="center">
+                            <Headline align="center">
+                                {'Who\'s Behind all This?'}
+                            </Headline>
+                            <Divider/>
+                            <Columns
+                                maxCount={2}
+                                justify="center"
+                                masonry
+                            >
+                                {contributors.map(person =>
+                                    <Contributor key={person.name} person={person}/>,
+                                )}
+                            </Columns>
+                        </Section>
+                        <Footer pad="large" align="center" justify="center" direction="column">
+                            <Heading align="center" tag="h2">
+                                Have any questions??
+                            </Heading>
+                            <Box align="center" justify="center" pad="medium">
+                                <Button label="Get in Touch" href="mailto:admin@ryancollins.io"/>
+                            </Box>
+                        </Footer>
                     </Box>
-                  </Footer>
-                </Box>
-              </Maybe>
+                </Maybe>
             </Box>
         );
     }

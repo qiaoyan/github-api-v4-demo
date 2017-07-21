@@ -1,10 +1,11 @@
 import React from 'react';
 import Box from 'grommet/components/Box';
+import {StarsContainer} from 'containers'
 
 export default function StarsPage() {
-  return (
-    <Box>
-      Hello from StarsPage!
-    </Box>
-  );
+    return (
+        <Box>
+            <StarsContainer/>
+        </Box>
+    );
 }
